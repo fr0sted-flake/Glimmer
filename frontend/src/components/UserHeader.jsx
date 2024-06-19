@@ -9,24 +9,14 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { Link as RouterLink } from "react-router-dom";
 import useFollowUnfollow from "../hooks/useFollowUnfollow";
+import copyURL from "../utils/copyText.js";
 
 const UserHeader = ({ user }) => {
 	const toast = useToast();
 	const currentUser = useRecoilValue(userAtom); // logged in user
 	const { handleFollowUnfollow, following, updating } = useFollowUnfollow(user);
 
-	const copyURL = () => {
-		const currentURL = window.location.href;
-		navigator.clipboard.writeText(currentURL).then(() => {
-			toast({
-				title: "Success.",
-				status: "success",
-				description: "Profile link copied.",
-				duration: 3000,
-				isClosable: true,
-			});
-		});
-	};
+	
 
 	return (
 		<VStack gap={4} alignItems={"start"}>
