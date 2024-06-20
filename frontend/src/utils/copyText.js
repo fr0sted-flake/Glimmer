@@ -1,3 +1,6 @@
+import { useToast } from "@chakra-ui/react";
+const toast = useToast();
+
 const copyURL = () => {
     const currentURL = window.location.href;
     navigator.clipboard.writeText(currentURL).then(() => {
