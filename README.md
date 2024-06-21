@@ -17,19 +17,22 @@ For a live demonstration of the platform, you can visit the deployed link: [Glim
 3. **Chatting**:
    - Chat privately with other users.
 
-4. **Feed**:
-   - Users can post and their posts will be visible to all other users.
+4. **Follow and unfollow users**:
+   - Users can follow or unfollow others
 
-5. **Liking and Commenting**   
-   - Users can like and comment to other user posts and replies are publically visible. They can also see the no of likes
+5. **Feed**:
+   - Users can follow others to see their posts as well as can post and their posts will be visible to their followers.
 
-6. **Suggested Users**:
+6. **Liking and Commenting**   
+   - Users can like and comment to other user posts and replies are publically visible is they click the post. They can also see the no of likes.
+
+7. **Suggested Users**:
    - Suggest latest registered users on a new account signup.
 
-7. **Change Theme**:
+8. **Change Theme**:
    - Toggle theme by clicking main home page icon located in the centre.  
 
-8. **Search users**:
+9. **Search users**:
    - Search users by username in the chat page. 
 
 ## Tech Stack
