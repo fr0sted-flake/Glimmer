@@ -1,30 +1,14 @@
 import { Avatar } from "@chakra-ui/avatar";
 import { Box, Flex, Link, Text, VStack } from "@chakra-ui/layout";
-import { Button, useToast } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { Link as RouterLink } from "react-router-dom";
 import useFollowUnfollow from "../hooks/useFollowUnfollow";
 
-
 const UserHeader = ({ user }) => {
-  const toast = useToast();
   const currentUser = useRecoilValue(userAtom); // logged in user
   const { handleFollowUnfollow, following, updating } = useFollowUnfollow(user);
-
-
-  const copyURL = () => {
-	const currentURL = window.location.href;
-	navigator.clipboard.writeText(currentURL).then(() => {
-		toast({
-			title: "Success.",
-			status: "success",
-			description: "Profile link copied.",
-			duration: 3000,
-			isClosable: true,
-		});
-	});
-};
 
   return (
     <VStack gap={4} alignItems={"start"}>
@@ -35,7 +19,6 @@ const UserHeader = ({ user }) => {
           </Text>
           <Flex gap={2} alignItems={"center"}>
             <Text fontSize={"sm"}>{user.username}</Text>
-            
           </Flex>
         </Box>
         <Box>
@@ -77,13 +60,8 @@ const UserHeader = ({ user }) => {
       <Flex w={"full"} justifyContent={"space-between"}>
         <Flex gap={2} alignItems={"center"}>
           <Text color={"gray.light"}>{user.followers.length} followers</Text>
-          
-          
         </Flex>
-        <Flex>
-          
-         
-        </Flex>
+        <Flex></Flex>
       </Flex>
 
       <Flex w={"full"}>
@@ -96,7 +74,6 @@ const UserHeader = ({ user }) => {
         >
           <Text fontWeight={"bold"}> Your Posts</Text>
         </Flex>
-        
       </Flex>
     </VStack>
   );

@@ -5,15 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Actions from "./Actions";
 import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
-import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
-import postsAtom from "../atoms/postsAtom";
 
 const Post = ({ post, postedBy }) => {
   const [user, setUser] = useState(null);
   const showToast = useShowToast();
-  const currentUser = useRecoilValue(userAtom);
-  const [posts, setPosts] = useRecoilState(postsAtom);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,7 +30,6 @@ const Post = ({ post, postedBy }) => {
     getUser();
   }, [postedBy, showToast]);
 
-  
   if (!user) return null;
   return (
     <Link to={`/${user.username}/post/${post._id}`}>
@@ -64,7 +58,6 @@ const Post = ({ post, postedBy }) => {
               >
                 {user?.username}
               </Text>
-              
             </Flex>
           </Flex>
 

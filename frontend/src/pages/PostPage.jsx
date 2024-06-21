@@ -4,9 +4,8 @@ import { useEffect } from "react";
 import Comment from "../components/Comment";
 import useGetUserProfile from "../hooks/useGetUserProfile";
 import useShowToast from "../hooks/useShowToast";
-import { useNavigate, useParams } from "react-router-dom";
-import { useRecoilState, useRecoilValue } from "recoil";
-import userAtom from "../atoms/userAtom";
+import { useParams } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
 
 const PostPage = () => {
@@ -14,8 +13,6 @@ const PostPage = () => {
   const [posts, setPosts] = useRecoilState(postsAtom);
   const showToast = useShowToast();
   const { pid } = useParams();
-  const currentUser = useRecoilValue(userAtom);
-  const navigate = useNavigate();
 
   const currentPost = posts[0];
 
@@ -46,7 +43,6 @@ const PostPage = () => {
   }
 
   if (!currentPost) return null;
-  console.log("currentPost", currentPost);
 
   return (
     <>

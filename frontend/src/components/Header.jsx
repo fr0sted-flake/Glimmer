@@ -23,11 +23,7 @@ const Header = () => {
         </Link>
       )}
       {!user && (
-        <Link
-          as={RouterLink}
-          to={"/auth"}
-          onClick={() => setAuthScreen("login")}
-        >
+        <Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("login")}>
           Login
         </Link>
       )}
@@ -56,11 +52,7 @@ const Header = () => {
       )}
 
       {!user && (
-        <Link
-          as={RouterLink}
-          to={"/auth"}
-          onClick={() => setAuthScreen("signup")}
-        >
+        <Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("signup")}>
           Sign up
         </Link>
       )}

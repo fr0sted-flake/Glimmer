@@ -15,15 +15,13 @@ dotenv.config();
 connectDB();
 job.start();
 
-
-
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 cloudinary.config({
-	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-	api_key: process.env.CLOUDINARY_API_KEY,
-	api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 // Middlewares
@@ -38,13 +36,14 @@ app.use("/api/messages", messageRoutes);
 
 // http://localhost:5000 => backend,frontend
 
+// for production
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-	// react app
-	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-	});
+  // react app
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  });
 }
 
 server.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
