@@ -21,7 +21,7 @@ For a live demonstration of the platform, you can visit the deployed link: [Glim
    - Users can post and their posts will be visible to all other users.
 
 5. **Liking and Commenting**   
-   - Users can like and comment to other user posts and replies are publically visible.
+   - Users can like and comment to other user posts and replies are publically visible. They can also see the no of likes
 
 6. **Suggested Users**:
    - Suggest latest registered users on a new account signup.
