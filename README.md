@@ -27,7 +27,7 @@ For a live demonstration of the platform, you can visit the deployed link: [Glim
    - Users can like and comment to other user posts and replies are publically visible is they click the post. They can also see the no of likes.
 
 7. **Suggested Users**:
-   - Suggest latest registered users on a new account signup.
+   - Suggest latest 4 registered users on a new account signup.
 
 8. **Change Theme**:
    - Toggle theme by clicking main home page icon located in the centre.  
