@@ -7,7 +7,7 @@ import { conversationsAtom, selectedConversationAtom } from "../atoms/messagesAt
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useSocket } from "../context/SocketContext.jsx";
-import messageSound from "../assets/sounds/message.mp3";
+
 const MessageContainer = () => {
 	const showToast = useShowToast();
 	const selectedConversation = useRecoilValue(selectedConversationAtom);
@@ -24,11 +24,7 @@ const MessageContainer = () => {
 				setMessages((prev) => [...prev, message]);
 			}
 
-			// make a sound if the window is not focused
-			if (!document.hasFocus()) {
-				const sound = new Audio(messageSound);
-				sound.play();
-			}
+			
 
 			setConversations((prev) => {
 				const updatedConversations = prev.map((conversation) => {
@@ -116,7 +112,7 @@ const MessageContainer = () => {
 			<Flex w={"full"} h={12} alignItems={"center"} gap={2}>
 				<Avatar src={selectedConversation.userProfilePic} size={"sm"} />
 				<Text display={"flex"} alignItems={"center"}>
-					{selectedConversation.username} <Image src='/verified.png' w={4} h={4} ml={1} />
+					{selectedConversation.username} 
 				</Text>
 			</Flex>
 

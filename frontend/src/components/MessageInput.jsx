@@ -18,7 +18,6 @@ import { IoSendSharp } from "react-icons/io5";
 import useShowToast from "../hooks/useShowToast";
 import { conversationsAtom, selectedConversationAtom } from "../atoms/messagesAtom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { BsFillImageFill } from "react-icons/bs";
 import usePreviewImg from "../hooks/usePreviewImg";
 
 const MessageInput = ({ setMessages }) => {
@@ -96,10 +95,7 @@ const MessageInput = ({ setMessages }) => {
 					</InputRightElement>
 				</InputGroup>
 			</form>
-			<Flex flex={5} cursor={"pointer"}>
-				<BsFillImageFill size={20} onClick={() => imageRef.current.click()} />
-				<Input type={"file"} hidden ref={imageRef} onChange={handleImageChange} />
-			</Flex>
+			
 			<Modal
 				isOpen={imgUrl}
 				onClose={() => {
