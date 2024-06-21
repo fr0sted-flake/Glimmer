@@ -72,7 +72,7 @@ const UserHeader = ({ user }) => {
           pb="3"
           cursor={"pointer"}
         >
-          <Text fontWeight={"bold"}> Your Posts</Text>
+          <Text fontWeight={"bold"}> Posts</Text>
         </Flex>
       </Flex>
     </VStack>
