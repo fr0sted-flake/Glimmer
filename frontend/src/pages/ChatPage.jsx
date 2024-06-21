@@ -20,25 +20,7 @@ const ChatPage = () => {
 	const showToast = useShowToast();
 	const { socket, onlineUsers } = useSocket();
 
-	useEffect(() => {
-		socket?.on("messagesSeen", ({ conversationId }) => {
-			setConversations((prev) => {
-				const updatedConversations = prev.map((conversation) => {
-					if (conversation._id === conversationId) {
-						return {
-							...conversation,
-							lastMessage: {
-								...conversation.lastMessage,
-								seen: true,
-							},
-						};
-					}
-					return conversation;
-				});
-				return updatedConversations;
-			});
-		});
-	}, [socket, setConversations]);
+	
 
 	useEffect(() => {
 		const getConversations = async () => {
@@ -134,11 +116,11 @@ const ChatPage = () => {
 			>
 				<Flex flex={30} gap={2} flexDirection={"column"} maxW={{ sm: "250px", md: "full" }} mx={"auto"}>
 					<Text fontWeight={700} color={useColorModeValue("gray.600", "gray.400")}>
-						Your Conversations
+						Your Messages
 					</Text>
 					<form onSubmit={handleConversationSearch}>
-						<Flex alignItems={"center"} gap={2}>
-							<Input placeholder='Search for a user' onChange={(e) => setSearchText(e.target.value)} />
+						<Flex alignItems={"center"} gap={1}>
+							<Input placeholder='Search for any user' onChange={(e) => setSearchText(e.target.value)} />
 							<Button size={"sm"} onClick={handleConversationSearch} isLoading={searchingUser}>
 								<SearchIcon />
 							</Button>

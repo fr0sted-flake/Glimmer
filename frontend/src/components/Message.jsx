@@ -5,8 +5,6 @@ import userAtom from "../atoms/userAtom";
 import { useState } from "react";
 
 const Message = ({ ownMessage, message }) => {
-  const selectedConversation = useRecoilValue(selectedConversationAtom);
-  const user = useRecoilValue(userAtom);
   const [imgLoaded, setImgLoaded] = useState(false);
   return (
     <>
@@ -20,9 +18,7 @@ const Message = ({ ownMessage, message }) => {
                 ml={1}
                 color={message.seen ? "blue.400" : ""}
                 fontWeight={"bold"}
-              >
-                
-              </Box>
+              ></Box>
             </Flex>
           )}
         </Flex>

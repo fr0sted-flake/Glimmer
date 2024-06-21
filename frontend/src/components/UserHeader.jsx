@@ -94,18 +94,9 @@ const UserHeader = ({ user }) => {
           pb="3"
           cursor={"pointer"}
         >
-          <Text fontWeight={"bold"}> Threads</Text>
+          <Text fontWeight={"bold"}> Your Posts</Text>
         </Flex>
-        <Flex
-          flex={1}
-          borderBottom={"1px solid gray"}
-          justifyContent={"center"}
-          color={"gray.light"}
-          pb="3"
-          cursor={"pointer"}
-        >
-          <Text fontWeight={"bold"}> Replies</Text>
-        </Flex>
+        
       </Flex>
     </VStack>
   );
